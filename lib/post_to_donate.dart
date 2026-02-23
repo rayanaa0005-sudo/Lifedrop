@@ -10,10 +10,16 @@ class PostToDonatePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFB71C1C),
         elevation: 0,
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(icon: const Icon(Icons.arrow_back, color:Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          }
+          ),
+
+
         title: const Text(
           "POST TO DONATE",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle( color:Colors.white),
         ),
         centerTitle: true,
       ),
@@ -91,7 +97,7 @@ class PostToDonatePage extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       "Post",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 18, color:Colors.white),
                     ),
                   ),
                 ),

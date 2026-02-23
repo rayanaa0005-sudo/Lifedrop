@@ -10,10 +10,14 @@ class RequestForBlood extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFB71C1C),
         elevation: 0,
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(icon: const Icon(Icons.arrow_back, color:Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            }
+        ),
         title: const Text(
           "Make Request For Blood",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle( color:Colors.white),
         ),
         centerTitle: true,
       ),
@@ -108,7 +112,7 @@ class RequestForBlood extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       "Request",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                   ),
                 ),

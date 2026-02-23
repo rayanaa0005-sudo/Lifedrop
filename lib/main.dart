@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifedrop/request_for_blood.dart';
+import 'package:lifedrop/select_blood_group.dart';
 import 'post_to_donate.dart';
 
 void main() {
@@ -53,6 +54,18 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: const Text('Post to Donate'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SelectBloodGroup(),
+                  ),
+                );
+              },
+              child: const Text('Select Blood Group'),
             ),
           ],
         ),
