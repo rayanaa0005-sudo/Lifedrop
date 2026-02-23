@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(), // Now home is our custom page
+      home: HomePage(),
     );
   }
 }
@@ -33,7 +33,6 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                // Navigate to RequestForBlood page
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -46,7 +45,6 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Navigate to PostToDonate page
                 Navigator.push(
                   context,
                   MaterialPageRoute(
