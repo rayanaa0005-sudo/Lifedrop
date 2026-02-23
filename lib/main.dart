@@ -1,11 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:lifedrop/request_for_blood.dart';
+import 'post_to_donate.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home:Text('hi')
-  )
-  );
-
-
+  runApp(const MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(), // Now home is our custom page
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('LifeDrop Home'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to RequestForBlood page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RequestForBlood(),
+                  ),
+                );
+              },
+              child: const Text('Request for Blood'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to PostToDonate page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PostToDonatePage(),
+                  ),
+                );
+              },
+              child: const Text('Post to Donate'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
