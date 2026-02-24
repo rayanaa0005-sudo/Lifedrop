@@ -91,7 +91,7 @@ class RequestCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
-                    "Zohein Tonha",
+                    "Zaherin Tanha",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
@@ -128,7 +128,7 @@ class RequestCard extends StatelessWidget {
             child: Icon(
               Icons.phone,
               color: Color(0xFFB71C1C),
-              size: 26,
+              size: 50,
             ),
           ),
         ],

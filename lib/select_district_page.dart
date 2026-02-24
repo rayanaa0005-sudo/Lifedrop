@@ -9,9 +9,17 @@ class SelectDistrictPage extends StatelessWidget {
     "Bhola",
     "Bagerhat",
     "Barisal",
-    "Chittagang",
+    "Chittagong",
     "Cumilla",
     "Dhaka",
+    "Feni",
+    "Jessore",
+    "Khulna",
+    "Noakhali",
+    "Pabna",
+    "Rangpur",
+    "Sylhet",
+    "Tangail",
   ];
 
   @override
@@ -19,17 +27,18 @@ class SelectDistrictPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff9f2026),
-        leading: IconButton(icon: const Icon(Icons.arrow_back, color:Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-            }
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
-        title: const Text("Select District",
+        title: const Text(
+          "Select District",
           style: TextStyle(
-          color: Colors.white,
+            color: Colors.white,
+          ),
         ),
-      ),
-
       ),
       body: ListView.builder(
         itemCount: districts.length,
@@ -43,6 +52,11 @@ class SelectDistrictPage extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (_) => const HospitalPage(),
                   ),
+                );
+              } else {
+                // You can add navigation for other districts later
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("${districts[index]} data not available yet")),
                 );
               }
             },

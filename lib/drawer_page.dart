@@ -10,16 +10,27 @@ class DrawerPage extends StatelessWidget {
       child: Column(
         children: [
 
-          // 🔴 RED HEADER WITH LOGO
+          // 🔴 RED HEADER WITH LOGO AND BACK BUTTON
           Container(
             width: double.infinity,
             height: 180,
             color: const Color(0xff9f2026),
-            padding: const EdgeInsets.only(left: 20, top: 40),
-            alignment: Alignment.topLeft,
-            child: Image.asset(
-              "assets/images/lifedrop_logo.png",
-              height: 80,
+            padding: const EdgeInsets.only(left: 5, top: 10, right: 10),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
+                  onPressed: () {
+                    Navigator.pop(context); // closes the drawer
+                  },
+                ),
+                const SizedBox(width: 5),
+                Image.asset(
+                  "assets/images/lifedrop_logo.png",
+                  height: 80,
+                ),
+              ],
             ),
           ),
 
