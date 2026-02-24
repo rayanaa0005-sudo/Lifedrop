@@ -1,75 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:lifedrop/request_for_blood.dart';
-import 'package:lifedrop/select_blood_group.dart';
-import 'post_to_donate.dart';
+import 'home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const LifeDropApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class LifeDropApp extends StatelessWidget {
+  const LifeDropApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('LifeDrop Home'),
+      title: 'LifeDrop',
+      theme: ThemeData(
+        primaryColor: const Color(0xff9f2026),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const RequestForBlood(),
-                  ),
-                );
-              },
-              child: const Text('Request for Blood'),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const PostToDonatePage(),
-                  ),
-                );
-              },
-              child: const Text('Post to Donate'),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SelectBloodGroup(),
-                  ),
-                );
-              },
-              child: const Text('Select Blood Group'),
-            ),
-          ],
-        ),
-      ),
+      home: const HomePage(),
+
+      // Needed for SIGN OUT navigation
+      routes: {
+        "/login": (context) => const Placeholder(),
+        // Replace Placeholder() with your friend's LoginPage later
+      },
     );
   }
 }
