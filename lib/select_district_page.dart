@@ -19,7 +19,17 @@ class SelectDistrictPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff9f2026),
-        title: const Text("Select District"),
+        leading: IconButton(icon: const Icon(Icons.arrow_back, color:Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            }
+        ),
+        title: const Text("Select District",
+          style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+
       ),
       body: ListView.builder(
         itemCount: districts.length,

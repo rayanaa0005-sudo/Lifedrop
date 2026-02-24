@@ -42,7 +42,7 @@ class SelectDistrict extends StatelessWidget {
               ),
             ),
             onTap: () {
-             
+
             },
           );
         },

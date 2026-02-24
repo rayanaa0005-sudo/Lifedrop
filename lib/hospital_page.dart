@@ -8,8 +8,19 @@ class HospitalPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff9f2026),
-        title: const Text("Hospitals And Ambulance Services"),
+        leading: IconButton(icon: const Icon(Icons.arrow_back, color:Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            }
+        ),
+        title: const Text("Hospitals And Ambulance Services",
+        style: TextStyle(
+          color: Colors.white,
+        ),
+        ),
+        centerTitle: true,
       ),
+
       body: ListView(
         children: [
 

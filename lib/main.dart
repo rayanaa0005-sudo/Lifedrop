@@ -13,6 +13,7 @@ class LifeDropApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LifeDrop',
+
       theme: ThemeData(
         primaryColor: const Color(0xff9f2026),
       ),

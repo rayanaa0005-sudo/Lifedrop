@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:lifedrop/rare_blood_groups.dart';
 import 'select_district_page.dart';
 import 'drawer_page.dart';
-
+import 'post_to_donate.dart';
+import 'request_for_blood.dart';
+import 'requests_for_blood.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const DrawerPage(), // slide panel
+      drawer: const DrawerPage(),
       appBar: AppBar(
         backgroundColor: const Color(0xff9f2026),
-        title: const Text("LifeDrop"),
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text("LifeDrop",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 15),
@@ -28,7 +36,6 @@ class HomePage extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            // Grid buttons
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: GridView.count(
@@ -39,10 +46,60 @@ class HomePage extends StatelessWidget {
                 children: [
 
                   buildGridItem("Available Donors", "assets/images/donor.png"),
-                  buildGridItem("Request For Donation", "assets/images/request.png"),
-                  buildGridItem("Request For Blood", "assets/images/blood.png"),
-                  buildGridItem("Post To Donate", "assets/images/post.png"),
-                  buildGridItem("Rare Blood Group", "assets/images/rare.png"),
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const RequestsPage(),
+                    ),
+                  );
+                },
+                child:
+                buildGridItem("Requests", "assets/images/request.png"),
+              ),
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const RequestForBlood(),
+                        ),
+                      );
+                    },
+                    child: buildGridItem(
+                        "Request For Blood",
+                        "assets/images/blood.png"),
+                  ),
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const PostToDonatePage(),
+                        ),
+                      );
+                    },
+                    child: buildGridItem(
+                        "Post To Donate",
+                        "assets/images/post.png"),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const RareBloodGroups(),
+                        ),
+                      );
+                    },
+                    child: buildGridItem("Rare Blood Group", "assets/images/rare.png"),
+                  ),
+
+
 
                   GestureDetector(
                     onTap: () {
@@ -63,7 +120,6 @@ class HomePage extends StatelessWidget {
 
             const SizedBox(height: 30),
 
-            // Blood chart
             Image.asset(
               "assets/images/chart.png",
               height: 250,
