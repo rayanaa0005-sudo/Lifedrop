@@ -19,10 +19,8 @@ class LifeDropApp extends StatelessWidget {
       ),
       home: const HomePage(),
 
-      // Needed for SIGN OUT navigation
       routes: {
         "/login": (context) => const Placeholder(),
-        // Replace Placeholder() with your friend's LoginPage later
       },
     );
   }

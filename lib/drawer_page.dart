@@ -22,7 +22,7 @@ class DrawerPage extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
                   onPressed: () {
-                    Navigator.pop(context); // closes the drawer
+                    Navigator.pop(context);
                   },
                 ),
                 const SizedBox(width: 5),
@@ -36,7 +36,7 @@ class DrawerPage extends StatelessWidget {
 
           const SizedBox(height: 20),
 
-          // MENU ITEMS
+
           buildMenuItem(
             context,
             title: "CONTACT US",
@@ -71,7 +71,7 @@ class DrawerPage extends StatelessWidget {
             context,
             title: "EXIT",
             onTap: () {
-              SystemNavigator.pop(); // closes entire app
+              SystemNavigator.pop();
             },
           ),
         ],

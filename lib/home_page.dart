@@ -46,10 +46,9 @@ class HomePage extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 childAspectRatio: 1,
-                crossAxisSpacing: 8,
-                // spacing between columns
-                mainAxisSpacing: 8,
-                // spacing between rows
+                crossAxisSpacing: 8, //column
+
+                mainAxisSpacing: 8, //row
                 children: [
                   buildBorderedGridItem(
                     context,
@@ -59,7 +58,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const SelectBloodGroupPage(), // go to blood group first
+                          builder: (_) => const SelectBloodGroupPage(),
                         ),
                       );
                     },
@@ -142,8 +141,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget buildBorderedGridItem(BuildContext context, String title, String imagePath, {required VoidCallback onTap}) {
-    Color normalColor = Colors.white; // default button background
-    Color hoverColor = Colors.red.withOpacity(0.2); // hover color
+    Color normalColor = Colors.white;
+    Color hoverColor = Colors.red.withOpacity(0.2);
     ValueNotifier<bool> isHovering = ValueNotifier(false);
 
     return MouseRegion(
@@ -156,7 +155,7 @@ class HomePage extends StatelessWidget {
             onTap: onTap,
             child: Container(
               decoration: BoxDecoration(
-                color: hovering ? hoverColor : normalColor, // toggle color
+                color: hovering ? hoverColor : normalColor,
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(8),
               ),

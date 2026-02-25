@@ -54,7 +54,7 @@ class SelectDistrictPage extends StatelessWidget {
                   ),
                 );
               } else {
-                // You can add navigation for other districts later
+
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text("${districts[index]} data not available yet")),
                 );
