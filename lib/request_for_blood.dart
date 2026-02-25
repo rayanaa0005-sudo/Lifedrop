@@ -6,9 +6,9 @@ class RequestForBlood extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFB71C1C), // red background
+      backgroundColor: const Color(0xff9f2026),
       appBar: AppBar(
-        backgroundColor: const Color(0xFFB71C1C),
+        backgroundColor: const Color(0xff9f2026),
         elevation: 0,
         leading: IconButton(icon: const Icon(Icons.arrow_back, color:Colors.white),
             onPressed: () {
@@ -107,7 +107,7 @@ class RequestForBlood extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFB71C1C),
+                      backgroundColor: const Color(0xff9f2026),
                     ),
                     onPressed: () {},
                     child: const Text(

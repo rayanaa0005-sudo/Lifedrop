@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:lifedrop/available_donors.dart';
 import 'package:lifedrop/rare_blood_groups.dart';
 import 'select_district_page.dart';
 import 'drawer_page.dart';
 import 'post_to_donate.dart';
 import 'request_for_blood.dart';
 import 'requests_for_blood.dart';
+import 'select_blood_group.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -53,7 +55,14 @@ class HomePage extends StatelessWidget {
                     context,
                     "Available Donors",
                     "assets/images/donor.png",
-                    onTap: () {}, // add navigation if needed
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const SelectBloodGroupPage(), // go to blood group first
+                        ),
+                      );
+                    },
                   ),
                   buildBorderedGridItem(
                     context,

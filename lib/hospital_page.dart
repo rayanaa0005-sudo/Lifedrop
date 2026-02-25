@@ -5,77 +5,87 @@ class HospitalPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final hospitals = [
+      {
+        "name": "Lab Scan Ambulance Service",
+        "phone": "01234567890",
+        "location": "Mohammad Ali Road, Cumilla"
+      },
+      {
+        "name": "Mayer Doa Ambulance Service",
+        "phone": "01234567890",
+        "location": "Cumilla"
+      },
+      {
+        "name": "Ad-din Women’s Medical College",
+        "phone": "01234567890",
+        "location": "Modhupukur, Cumilla"
+      },
+    ];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff9f2026),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Hospitals And Ambulance Services",
-          style: TextStyle(
-            color: Colors.white,
-          ),
+          style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
       ),
-      body: ListView(
-        children: [
-          buildService(
-            "Lab Scan Ambulance Service",
-            "01234567890",
-            "Mohammad Ali Road, Cumilla",
-          ),
-          buildService(
-            "Mayer Doa Ambulance Service",
-            "01234567890",
-            "Cumilla",
-          ),
-          buildService(
-            "Ad-din Women’s Medical College",
-            "01234567890",
-            "Modhupukur, Cumilla",
-          ),
-          buildService(
-            "Cumilla Medical College Hospital",
-            "01234567891",
-            "Shalbagan, Cumilla",
-          ),
-          buildService(
-            "Al-Haj Hospital & Diagnostic Center",
-            "01234567892",
-            "GEC, Cumilla",
-          ),
-          buildService(
-            "Ananda Hospital & Diagnostics",
-            "01234567893",
-            "Kotbari, Cumilla",
-          ),
-          buildService(
-            "Cumilla Ambulance Service",
-            "01234567894",
-            "District Hospital Road, Cumilla",
-          ),
-          buildService(
-            "Bashundhara Hospital",
-            "01234567895",
-            "Shalbagan, Cumilla",
-          ),
-        ],
+      body: ListView.builder(
+        padding: const EdgeInsets.all(10),
+        itemCount: hospitals.length,
+        itemBuilder: (context, index) {
+          final hospital = hospitals[index];
+          return Container(
+            margin: const EdgeInsets.only(bottom: 12),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade300,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 80,
+                  height: 120,
+                  color: const Color(0xff9f2026),
+                  child: const Icon(Icons.local_hospital, color: Colors.white, size: 40),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(hospital["name"]!, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                        const SizedBox(height: 4),
+                        Text(hospital["location"]!, style: const TextStyle(fontSize: 12)),
+                        const SizedBox(height: 4),
+                        Text("Phone: ${hospital["phone"]!}", style: const TextStyle(fontSize: 12)),
+                      ],
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 12),
+                  child: Icon(Icons.call, color: Color(0xff9f2026), size: 50),
+                ),
+              ],
+            ),
+          );
+        },
       ),
-    );
-  }
-
-  Widget buildService(String name, String phone, String location) {
-    return ListTile(
-      leading: const Icon(Icons.local_hospital, color: Color(0xff9f2026), size: 50),
-      title: Text(name),
-      subtitle: Text("$location\n$phone"),
-      isThreeLine: true,
-      trailing: const Icon(Icons.call, color: Color(0xff9f2026), size: 50),
     );
   }
 }

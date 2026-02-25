@@ -10,7 +10,7 @@ class DrawerPage extends StatelessWidget {
       child: Column(
         children: [
 
-          // 🔴 RED HEADER WITH LOGO AND BACK BUTTON
+
           Container(
             width: double.infinity,
             height: 180,
