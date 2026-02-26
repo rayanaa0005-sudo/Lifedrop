@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+
+import 'splash_screen.dart';
+import 'login_page.dart';
+import 'create_account.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(const LifeDropApp());
@@ -12,15 +16,15 @@ class LifeDropApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'LifeDrop',
 
-      theme: ThemeData(
-        primaryColor: const Color(0xff9f2026),
-      ),
-      home: const HomePage(),
+
+      initialRoute: '/',
 
       routes: {
-        "/login": (context) => const Placeholder(),
+        '/': (context) => const SplashScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const SignupScreen(),
+        '/home': (context) => const HomePage(),
       },
     );
   }
