@@ -77,7 +77,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             const SizedBox(height: 32),
 
-            // ✅ Sign Up Button wrapped in Builder for proper context
+
             Builder(
               builder: (contextButton) => SizedBox(
                 width: 160,
@@ -104,13 +104,13 @@ class _SignupScreenState extends State<SignupScreen> {
                     String password = passwordController.text.trim();
 
                     try {
-                      // Try to create a new user
+
                       UserCredential userCredential = await FirebaseAuth.instance
                           .createUserWithEmailAndPassword(email: email, password: password);
 
                       print("User created: ${userCredential.user!.email}");
 
-                      // Save extra info to Firestore
+
                       await FirebaseFirestore.instance
                           .collection('users')
                           .doc(userCredential.user!.uid)
@@ -125,7 +125,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       print("FirebaseAuthException: ${e.code}");
 
                       if (e.code == 'email-already-in-use') {
-                        // Existing user → sign in
+
                         try {
                           UserCredential userCredential = await FirebaseAuth.instance
                               .signInWithEmailAndPassword(email: email, password: password);
@@ -151,7 +151,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       return;
                     }
 
-                    // ✅ Navigate to HomePage
+
                     print("Navigating to HomePage...");
                     Navigator.pushReplacement(
                       contextButton,

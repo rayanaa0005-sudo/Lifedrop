@@ -117,7 +117,6 @@ class RequestsPage extends StatelessWidget {
                       ),
                     ),
 
-                    // 🔥 ACTION BUTTONS (CALL + DELETE)
                     Column(
                       children: [
                         IconButton(
@@ -126,7 +125,6 @@ class RequestsPage extends StatelessWidget {
                           onPressed: () => _callNumber(context, contact),
                         ),
 
-                        // 🔥 DELETE ONLY IF OWNER
                         if (currentUser != null &&
                             currentUser.uid == uid)
                           IconButton(

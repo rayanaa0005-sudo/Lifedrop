@@ -23,7 +23,6 @@ class _HospitalAmbulancePageState extends State<HospitalAmbulancePage> {
     "Comilla"
   ];
 
-  // Hardcoded hospital and ambulance data
   final List<Map<String, String>> services = [
     {
       "type": "Hospital",
@@ -77,7 +76,6 @@ class _HospitalAmbulancePageState extends State<HospitalAmbulancePage> {
 
   @override
   Widget build(BuildContext context) {
-    // Filter services based on selections
     final filteredServices = services.where((s) {
       final matchBlood = selectedBloodGroup == null ||
           s['bloodGroup'] == selectedBloodGroup || s['bloodGroup'] == "Any";
@@ -95,7 +93,6 @@ class _HospitalAmbulancePageState extends State<HospitalAmbulancePage> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // Blood Group Dropdown
             Row(
               children: [
                 const Text("Blood Group: ", style: TextStyle(fontSize: 16)),
@@ -115,7 +112,6 @@ class _HospitalAmbulancePageState extends State<HospitalAmbulancePage> {
               ],
             ),
             const SizedBox(height: 10),
-            // District Dropdown
             Row(
               children: [
                 const Text("District: ", style: TextStyle(fontSize: 16)),
@@ -135,7 +131,6 @@ class _HospitalAmbulancePageState extends State<HospitalAmbulancePage> {
               ],
             ),
             const SizedBox(height: 20),
-            // Results list
             Expanded(
               child: filteredServices.isEmpty
                   ? const Center(child: Text("No services available"))

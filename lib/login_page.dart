@@ -47,7 +47,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: 30),
 
-              // 🔥 Username / Email
               buildTextField(
                 emailController,
                 "Username / Email",
@@ -55,7 +54,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: 16),
 
-              // 🔥 Password with Eye Icon
               buildTextField(
                 passwordController,
                 "Password",
@@ -65,7 +63,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: 24),
 
-              // 🔥 LOGIN BUTTON → HOME
               SizedBox(
                 width: 140,
                 height: 48,
@@ -86,9 +83,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       if (!mounted) return;
 
-                      Navigator.pushReplacement(
+                      Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(builder: (_) => const HomePage()),
+                            (route) => false,
                       );
                     } catch (e) {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -109,7 +107,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: 12),
 
-              // 🔥 CREATE ACCOUNT → SIGNUP
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -157,7 +154,6 @@ class _LoginScreenState extends State<LoginScreen> {
           borderSide: BorderSide.none,
         ),
 
-        // 👁 Eye Icon for Password
         suffixIcon: isPassword
             ? IconButton(
           icon: Icon(

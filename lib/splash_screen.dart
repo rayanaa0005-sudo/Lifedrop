@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'login_page.dart';   // ✅ CHANGE THIS
+import 'login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    // ✅ AFTER 3 SECONDS → GO TO LOGIN
+
     Future.delayed(const Duration(seconds: 3), () {
 
       if (!mounted) return;
@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
 
                 Image.asset(
                   'assets/images/lifedrop_logo.png',
-                  width: 200,   // ⚠️ 400 was too big
+                  width: 200,
                 ),
 
                 const SizedBox(height: 20),

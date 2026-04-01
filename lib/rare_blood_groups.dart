@@ -120,7 +120,6 @@ class RareBloodGroups extends StatelessWidget {
                       ),
                     ),
 
-                    // 🔥 ACTIONS
                     Column(
                       children: [
                         IconButton(

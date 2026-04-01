@@ -47,9 +47,8 @@ class SelectDistrictPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => HospitalPage(
-                    selectedDistrict: districts[index],
-                    selectedBloodGroup: selectedBloodGroup,
+                  builder: (_) => HospitalAmbulancePage(
+
                   ),
                 ),
               );

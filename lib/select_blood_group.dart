@@ -26,7 +26,6 @@ class SelectBloodGroupPage extends StatelessWidget {
           return ListTile(
             title: Text(bloodGroup, style: const TextStyle(fontSize: 20, color: Color(0xFF5A5A5A))),
             onTap: () {
-              // Pass selected blood group to district page
               Navigator.push(
                 context,
                 MaterialPageRoute(

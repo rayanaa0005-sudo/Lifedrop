@@ -37,7 +37,6 @@ class _RequestForBloodState extends State<RequestForBlood> {
     }
 
     try {
-      // Add request to Firestore
       await FirebaseFirestore.instance.collection('requests').add({
         "name": nameController.text.trim(),
         "location": locationController.text.trim(),
@@ -48,14 +47,12 @@ class _RequestForBloodState extends State<RequestForBlood> {
         "timestamp": FieldValue.serverTimestamp(),
       });
 
-      // Clear all fields (reset form)
       nameController.clear();
       locationController.clear();
       bloodController.clear();
       statusController.clear();
       contactController.clear();
 
-      // Show confirmation
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Request Added")),
       );

@@ -20,10 +20,9 @@ class _PostToDonatePageState extends State<PostToDonatePage> {
   String selectedBlood = "A+";
   String selectedGender = "Male";
 
-  bool isLoading = false;  // ← ADDED
+  bool isLoading = false;
 
   Future<void> postData() async {
-    // Validation
     if (nameController.text.trim().isEmpty ||
         addressController.text.trim().isEmpty ||
         phoneController.text.trim().isEmpty ||
@@ -34,7 +33,7 @@ class _PostToDonatePageState extends State<PostToDonatePage> {
       return;
     }
 
-    setState(() => isLoading = true);  // ← show loading
+    setState(() => isLoading = true);
 
     try {
       await FirebaseFirestore.instance.collection('donors').add({
@@ -58,7 +57,7 @@ class _PostToDonatePageState extends State<PostToDonatePage> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Error: $e")),  // ← shows real error
+          SnackBar(content: Text("Error: $e")),
         );
       }
     } finally {

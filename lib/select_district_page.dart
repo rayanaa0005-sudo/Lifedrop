@@ -30,13 +30,12 @@ class SelectDistrictPage extends StatelessWidget {
           return ListTile(
             title: Text(district),
             onTap: () {
-              // Pass blood group + district to hospital page
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => HospitalPage(
-                    selectedBloodGroup: selectedBloodGroup,
-                    selectedDistrict: district,
+                  builder: (_) => HospitalAmbulancePage(
+
                   ),
                 ),
               );
