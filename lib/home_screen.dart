@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'available_donors.dart';
 import 'rare_blood_groups.dart';
-import 'select_district_page.dart';
 import 'post_to_donate.dart';
 import 'request_for_blood.dart';
 import 'requests_for_blood.dart';
 import 'drawer_page.dart';
 import 'user_profile.dart';
+import 'hospital_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -152,7 +152,12 @@ class HomePage extends StatelessWidget {
                     "assets/images/hospital.png",
                     "Nearby Hospital & Ambulance",
                         () {
-                      // Hospital page - add later
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const HospitalAmbulancePage(),
+                        ),
+                      );
                     },
                   ),
                 ],
