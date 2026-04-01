@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+import 'auth_wrapper.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -32,15 +32,14 @@ class _SplashScreenState extends State<SplashScreen>
         Tween<double>(begin: 0.8, end: 1.0).animate(_controller);
 
     _controller.forward();
-
-
+    
     Future.delayed(const Duration(seconds: 3), () {
 
       if (!mounted) return;
 
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const LoginScreen(),
+          builder: (context) => const AuthWrapper(),
         ),
       );
     });

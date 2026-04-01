@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'auth_wrapper.dart';
 import 'firebase_options.dart';
 import 'splash_screen.dart';
 import 'login_page.dart';
@@ -23,9 +24,11 @@ class LifeDropApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+
+      home: const SplashScreen(),
+
       routes: {
-        '/': (context) => const SplashScreen(),
+        '/auth': (context) => const AuthWrapper(),
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignupScreen(),
         '/home': (context) => const HomePage(),

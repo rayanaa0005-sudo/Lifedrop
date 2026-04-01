@@ -76,6 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () async {
                     try {
+                      await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
+
                       await FirebaseAuth.instance.signInWithEmailAndPassword(
                         email: emailController.text.trim(),
                         password: passwordController.text.trim(),
